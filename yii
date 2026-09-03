@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
+require __DIR__ . '/environment.php';
+
+use yii\console\Application;
+
+$config = require __DIR__ . '/console.php';
+
+if (YII_ENV === 'dev') {
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+    ];
+}
+
+$app = new Application($config);
+$exitCode = $app->run();
+exit($exitCode);
