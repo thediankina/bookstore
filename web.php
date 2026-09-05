@@ -1,5 +1,6 @@
 <?php
 
+$container = require __DIR__ . '/container.php';
 $db = require __DIR__ . '/database.php';
 $urlManager = require __DIR__ . '/urlManager.php';
 
@@ -12,6 +13,7 @@ return [
         '@bower' => '@vendor/bower-asset',
     ],
     'controllerNamespace' => 'app\controllers',
+    'container' => $container,
     'components' => [
         'db' => $db,
         'snowflake' => [

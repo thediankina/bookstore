@@ -10,6 +10,16 @@ if (YII_ENV === 'dev') {
     ];
 }
 
+if (YII_ENV === 'test') {
+    return [
+        'class' => 'yii\db\Connection',
+        'dsn' => 'sqlite:@app/runtime/test.db',
+        'username' => '',
+        'password' => '',
+        'charset' => 'utf8',
+    ];
+}
+
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'pgsql:host=' . $_ENV['DB_HOST'] . ';port=' . $_ENV['DB_PORT'] . ';dbname=' . $_ENV['DB_NAME'],

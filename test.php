@@ -1,5 +1,7 @@
 <?php
 
+$container = require __DIR__ . '/container.php';
+$db = require __DIR__ . '/database.php';
 $urlManager = require __DIR__ . '/urlManager.php';
 
 return [
@@ -10,14 +12,9 @@ return [
         '@bower' => '@vendor/bower-asset',
     ],
     'controllerNamespace' => 'app\controllers',
+    'container' => $container,
     'components' => [
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'sqlite:@app/runtime/test.db',
-            'username' => '',
-            'password' => '',
-            'charset' => 'utf8',
-        ],
+        'db' => $db,
         'snowflake' => [
             'class' => 'xutl\snowflake\Snowflake',
             'workerId' => 0,

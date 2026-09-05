@@ -10,5 +10,6 @@ return [
     ],
     'rules' => [
         '<controller>/<action>/<id:\d+>' => '<controller>/<action>',
+        'catalog' => 'book/index',
     ],
 ];
