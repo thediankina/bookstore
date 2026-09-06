@@ -6,7 +6,7 @@ $urlManager = require __DIR__ . '/urlManager.php';
 
 return [
     'id' => 'web-app',
-    'name' => 'Booking store',
+    'name' => 'Bookstore',
     'basePath' => __DIR__,
     'bootstrap' => ['log'],
     'aliases' => [
